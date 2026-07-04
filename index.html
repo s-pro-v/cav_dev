@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANVASS // OXY_OS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="system-grid">
+        <header class="panel corner-box header-panel">
+            <svg class="bracket bracket-tl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 1H1V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-tr" viewBox="0 0 15 15" fill="none">
+                <path d="M0 1H14V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-bl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 14H1V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-br" viewBox="0 0 15 15" fill="none">
+                <path d="M0 14H14V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <div class="ticks-header">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <span class="label">OXY_OS // CANVASS</span>
+                <div class="dots"><span></span><span></span><span></span></div>
+            </div>
+            <div class="header-row">
+                <h1 class="brand-heading">CANVASS <span>| OXY_OS</span></h1>
+                <div class="header-actions">
+                    <div class="badge-alert kernel-badge">
+                        <span class="indicator pulse"></span>
+                        <span class="text">KERNEL v3.11 [SYS.ACTIVE]</span>
+                    </div>
+                    <button id="theme-toggle-btn" class="theme-toggle-btn" type="button"
+                        aria-label="Przełącz na jasny motyw" data-theme="dark">
+                        <span class="theme-toggle-icon" aria-hidden="true">
+                            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="4" />
+                                <path
+                                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                            </svg>
+                            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                            </svg>
+                        </span>
+                        <span class="theme-toggle-label">
+                            <span class="theme-toggle-key">THEME</span>
+                            <span class="theme-toggle-value">DARK</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="panel corner-box canvas-panel">
+            <svg class="bracket bracket-tl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 1H1V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-tr" viewBox="0 0 15 15" fill="none">
+                <path d="M0 1H14V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-bl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 14H1V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-br" viewBox="0 0 15 15" fill="none">
+                <path d="M0 14H14V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <canvas id="canvas">Your browser does not support canvas element.</canvas>
+            <div class="tech-markings bottom-right">RENDER_TARGET | 0x00A1</div>
+        </main>
+
+        <footer id="control" class="panel corner-box control-panel">
+            <svg class="bracket bracket-tl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 1H1V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-tr" viewBox="0 0 15 15" fill="none">
+                <path d="M0 1H14V15" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-bl" viewBox="0 0 15 15" fill="none">
+                <path d="M15 14H1V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <svg class="bracket bracket-br" viewBox="0 0 15 15" fill="none">
+                <path d="M0 14H14V0" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+
+            <div class="control-section tools-section">
+                <div class="data-label">TOOLKIT | SELECT</div>
+                <div id="tools" class="grid-container"></div>
+            </div>
+
+            <div class="control-section brush-section">
+                <div class="data-label">BRUSH_CFG | PARAMS</div>
+                <div class="input-group vertical compact">
+                    <div class="label-row">
+                        <label>SIZE</label>
+                        <input id="brush" type="text" value="2" />
+                    </div>
+                    <input id="brush-slider" type="range" min="1" max="100" value="2" class="slider" />
+                </div>
+                <div class="input-group">
+                    <label>HEX</label>
+                    <input id="color" type="text" value="#FF6600" />
+                </div>
+            </div>
+
+            <div class="control-section grid-section">
+                <div class="data-label">GRID_CFG | MATRIX</div>
+                <div class="input-group vertical compact">
+                    <div class="label-row">
+                        <label>SIZE</label>
+                        <input id="grid-size" type="text" value="30" />
+                    </div>
+                    <input id="grid-size-slider" type="range" min="5" max="100" value="30" class="slider" />
+                </div>
+                <div class="toggle-row">
+                    <div class="toggle-btn selected" id="toggle-grid">GRID: ON</div>
+                    <div class="toggle-btn selected" id="toggle-snap">SNAP: ON</div>
+                </div>
+            </div>
+
+            <div class="control-section palette-section">
+                <div class="data-label">COLOR_MATRIX | ARRAY</div>
+                <div id="paints" class="palette-grid"></div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
